@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Safe Password Generator",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assets/16.png",
+        "48":  "assets/48.png",
+        "128":  "assets/128.png"
+      }
+    },
+    "icons": {
+      "16": "assets/16.png",
+      "48":  "assets/48.png",
+      "128":  "assets/128.png"
+    }
+  }
