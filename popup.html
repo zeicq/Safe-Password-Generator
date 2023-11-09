@@ -4,11 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <title>Safe-Password-Generator</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="result">
+            <input type="text" class="text" value="" />
+        </div>
 
+        <div class="options">
+            <div class="range-container">
+                <input type="range" />
+                <label for="range">18</label>
+            </div>
+
+            <div class="passwordSection">
+                <div class="option"> Numbers
+                    <label>
+                        <input type="checkbox" id="includeNumbers" checked />
+                    </label>
+                </div>
+                <div class="option"> Lower case
+                    <label>
+                        <input type="checkbox" id="includeLowercase" checked />
+                    </label>
+                </div>
+
+                <div class="option"> Upper case
+                    <label>
+                        <input type="checkbox" id="includeUppercase" checked />
+                    </label>
+                </div>
+
+                <div class="option"> Special Chars
+                    <label>
+                        <input type="checkbox" id="includeSpecialChars" checked />
+                    </label>
+                </div>
+
+                <div class="option"> Spaces
+                    <label>
+                        <input type="checkbox" id="includeSpaces" />
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
     <script src="popup.js"></script>
 </body>
 
