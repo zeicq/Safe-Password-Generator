@@ -67,3 +67,22 @@ copyButton.addEventListener('click', function () {
         console.error('Something was wrong ', err);
     });
 });
+
+function showErrorModal(message) {
+    const errorModal = document.getElementById('errorModal');
+    const errorMessageElement = document.getElementById('errorMessage');
+    errorMessageElement.textContent = message;
+
+    errorModal.style.display = 'block';
+
+    const closeBtn = document.querySelector('.close');
+    closeBtn.onclick = function () {
+        errorModal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target === errorModal) {
+            errorModal.style.display = 'none';
+        }
+    };
+}
