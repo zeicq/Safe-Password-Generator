@@ -50,3 +50,20 @@ function generatePassword(length, charset) {
 
     return password;
 }
+
+const copyButton = document.getElementById('copyButton');
+const textCopy = document.querySelector(".copyText");
+
+copyButton.addEventListener('click', function () {
+    let input = document.getElementById('passwordOutput');
+
+    navigator.clipboard.writeText(input.value).then(function () {
+        textCopy.classList.add("active");
+        window.getSelection().removeAllRanges();
+        setTimeout(function () {
+            textCopy.classList.remove("active");
+        }, 2500);
+    }).catch(function (err) {
+        console.error('Something was wrong ', err);
+    });
+});
