@@ -1,51 +1,74 @@
+<html>
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
+    <title>Password Generator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe-Password-Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="result">
-            <input type="text" class="text" value="" />
+            <div class="copyText">
+                <input type="text" class="text" id="passwordOutput" value="" />
+                <button id="copyButton"><i class="fa fa-clone"></i></button>
+            </div>
         </div>
 
         <div class="options">
+
             <div class="range-container">
-                <input type="range" />
+                <input type="range" name="range" id="range" min="4" max="32" />
                 <label for="range">18</label>
             </div>
 
             <div class="passwordSection">
                 <div class="option"> Numbers
                     <label>
-                        <input type="checkbox" id="includeNumbers" checked />
+                        <input type="checkbox" class="cB" id="includeNumbers" checked />
+                        <div class="cB-outer-div">
+                            <div class="cB-inner-div"></div>
+                        </div>
                     </label>
                 </div>
                 <div class="option"> Lower case
                     <label>
-                        <input type="checkbox" id="includeLowercase" checked />
+                        <input type="checkbox" class="cB" id="includeLowercase" checked />
+                        <div class="cB-outer-div">
+                            <div class="cB-inner-div"></div>
+                        </div>
                     </label>
                 </div>
 
                 <div class="option"> Upper case
                     <label>
-                        <input type="checkbox" id="includeUppercase" checked />
+                        <input type="checkbox" class="cB" id="includeUppercase" checked />
+                        <div class="cB-outer-div">
+                            <div class="cB-inner-div"></div>
+                        </div>
                     </label>
                 </div>
 
                 <div class="option"> Special Chars
                     <label>
-                        <input type="checkbox" id="includeSpecialChars" checked />
+                        <input type="checkbox" class="cB" id="includeSpecialChars" checked />
+                        <div class="cB-outer-div">
+                            <div class="cB-inner-div"></div>
+                        </div>
                     </label>
                 </div>
 
                 <div class="option"> Spaces
                     <label>
-                        <input type="checkbox" id="includeSpaces" />
+                        <input type="checkbox" class="cB" id="includeSpaces" />
+                        <div class="cB-outer-div">
+                            <div class="cB-inner-div"></div>
+                        </div>
                     </label>
                 </div>
 
@@ -55,6 +78,13 @@
                 <button id="generateButton" type="button" class="btn btn-outline-success">Generate</button>
             </div>
 
+        </div>
+
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <p id="errorMessage"></p>
+                <span class="close">&times;</span>
+            </div>
         </div>
 
     </div>
